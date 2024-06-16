@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Dealer - Buy Bitcoin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS v5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: coral;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container-fluid {
+            padding: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        nav {
+            background-color: #343a40; /* Dark background color */
+            color: #FFFFFF; /* Text color */
+            padding: 10px 20px; /* Padding */
+            display: flex; /* Flex container */
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Center align items vertically */
+        }
+        
+        .nav-brand {
+            display: flex; /* Flex container */
+            align-items: center; /* Center align items vertically */
+        }
+        
+        .nav-brand i {
+            font-size: 30px; /* Icon size */
+            font-weight: bold; /* Icon weight */
+            margin-right: 10px; /* Space between icon and text */
+        }
+        
+        .nav-brand span {
+            font-size: 25px; /* Text size */
+            font-weight: bold; /* Text weight */
+            color: #FFFFFF; /* Text color */
+        }
+        
+        .nav-user {
+            font-size: 25px; /* Text size */
+            font-weight: bold; /* Text weight */
+            color: #FFFFFF; /* Text color */
+            display: flex; /* Align user info horizontally */
+            align-items: center; /* Center align items vertically */
+            white-space: nowrap; /* Prevent user info from wrapping */
+        }
+        
+        header {
+            text-align: center; /* Center align text in header */
+            padding: 20px; /* Padding for header */
+            background-color: chocolate; /* Header background color */
+            color: darkblue; /* Header text color */
+        }
+        
+        main {
+            padding: 20px; /* Padding for main content */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+            gap: 20px; /* Gap between grid items */
+            flex: 1;
+        }
+        
+        .section {
+            background-color: #f8f9fa; /* Light background color */
+            padding: 20px; /* Padding inside each section */
+            border-radius: 10px; /* Rounded corners */
+            text-align: center; /* Center align text in sections */
+        }
+        
+        .section h2 {
+            margin-bottom: 15px; /* Bottom margin for heading */
+            color: #343a40; /* Dark text color */
+        }
+        
+        footer {
+            background-color: #343a40; /* Dark background color for footer */
+            color: #FFFFFF; /* Text color for footer */
+            text-align: center; /* Center align text in footer */
+            padding: 10px 20px; /* Padding for footer */
+        }
+        
+        /* Chat Bot Styles */
+        .chat-bot {
+            background-color: #FFFFFF;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .chat-message {
+            margin-bottom: 10px;
+        }
+        
+        .user-message {
+            text-align: right;
+            color: #007bff;
+        }
+        
+        .bot-message {
+            text-align: left;
+            color: #28a745;
+        }
+        
+        .chat-input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- BODY -->
+    <div class="container-fluid">
+        <nav>
+            <!-- NAV -->
+            <div class="nav-user">
+                <img src="123.jpg" alt="Profile Picture" style="width:40px;height:40px;border-radius: 50%;">
+                <i style="margin-left: 5px;">FAIZAN ASLAM</i>
+            </div>
+            <div class="nav-brand">
+                <i class="bi bi-currency-bitcoin"></i>
+                <span>BITCOIN-DEALER</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <header>
+            <h1>Buy Bitcoin</h1>
+            <p>Enter the amount of Bitcoin you wish to purchase and proceed to payment.</p>
+            <div class="section">
+                <h2>Purchase Bitcoin</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="bitcoinAmount" class="form-label">Amount in Bitcoin (BTC)</label>
+                        <input type="number" class="form-control" id="bitcoinAmount" placeholder="0.01" min="0.01" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="walletAddress" class="form-label">Your Bitcoin Wallet Address</label>
+                        <input type="text" class="form-control" id="walletAddress" placeholder="Enter your wallet address" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="paymentMethod" class="form-label">Payment Method</label>
+                        <select class="form-select" id="paymentMethod" required>
+                            <option value="creditCard">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="bankTransfer">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Buy Bitcoin</button>
+                </form>
+            </div>
+        </header>        
+        <main>
+            <div class="section">
+                <h2>Help Section</h2>
+                <h4>Frequently Asked Questions</h4>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How do I buy Bitcoin?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                To buy Bitcoin, enter the amount you wish to purchase in the form above, provide your wallet address, select a payment method, and click 'Buy Bitcoin'.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                What is a Bitcoin wallet address?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                A Bitcoin wallet address is a unique identifier that allows you to receive Bitcoin. It's similar to a bank account number but for cryptocurrencies.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What payment methods are accepted?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We accept Credit Card, PayPal, and Bank Transfer. Select your preferred method during the purchase process.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="#">How to set up a Bitcoin wallet</a></li>
+                    <li><a href="#">Understanding Bitcoin transactions</a></li>
+                    <li><a href="#">Security tips for your Bitcoin</a></li>
+                </ul>
+            
+                <h4>Contact Us</h4>
+                <p>If you have any questions or need further assistance, please contact our support team:</p>
+                <ul>
+                    <li>Email: <a href="mailto:support@bitcoindealer.com">support@bitcoindealer.com</a></li>
+                    <li>Phone: +123 456 7890</li>
+                    <li>Live Chat: Available 24/7</li>
+                </ul>
+            
+                <a href="buy-index.page.html"><button class="btn btn-primary">Buy Now</button></a>
+                <a href="#"><button class="btn btn-primary">Exchange Now</button></a>
+            </div>
+            <div class="section">
+                <h2>Help Section</h2>
+                <div class="chat-bot" id="chatBotContainer">
+                    <div id="chatBotMessages">
+                        <div class="bot-message">
+                            <p>Hello! How can I assist you today?</p>
+                        </div>
+                    </div>
+                    <form id="chatBotForm" class="chat-input">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="userMessage" placeholder="Type your message here..." required>
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            &copy; 2024 Bitcoin Dealer. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<script>document.addEventListener('DOMContentLoaded', function() {
+    // Initial greeting from the bot
+    var initialBotMessage = "Hello! How can I assist you today?";
+    appendBotMessage(initialBotMessage);
+});
+
+document.getElementById('chatBotForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    var userMessageInput = document.getElementById('userMessage');
+    var userMessage = userMessageInput.value.trim();
+    
+    if (userMessage === '') {
+        return; // If message is empty, do nothing
+    }
+    
+    // Display user message in chat
+    appendUserMessage(userMessage);
+    
+    // Clear input field
+    userMessageInput.value = '';
+    
+    // Process user message
+    processUserMessage(userMessage);
+});
+
+function appendUserMessage(message) {
+    var chatBotMessages = document.getElementById('chatBotMessages');
+    var userMessageElement = document.createElement('div');
+    userMessageElement.className = 'chat-message user-message';
+    userMessageElement.innerHTML = '<p>' + message + '</p>';
+    chatBotMessages.appendChild(userMessageElement);
+    
+    // Scroll to bottom of chat after appending message
+    chatBotMessages.scrollTop = chatBotMessages.scrollHeight;
+}
+
+function processUserMessage(message) {
+    // Here you can implement logic to generate bot responses based on user input
+    // Replace this with actual logic or API call
+    
+    // Simulate processing delay
+    simulateProcessingDelay().then(function() {
+        // Generate bot response based on user message
+        generateBotResponse(message).then(function(botResponse) {
+            appendBotMessage(botResponse);
+        }).catch(function(error) {
+            console.error('Error generating bot response:', error);
+            appendBotMessage("Sorry, I'm currently unable to assist. Please try again later.");
+        });
+    }).catch(function(error) {
+        console.error('Error processing user message:', error);
+        appendBotMessage("Sorry, I'm currently unable to process your request. Please try again later.");
+    });
+}
+
+function simulateProcessingDelay() {
+    // Simulate processing delay using a promise
+    return new Promise(function(resolve) {
+        setTimeout(resolve, 500); // Simulate delay for half a second
+    });
+}
+
+function generateBotResponse(userMessage) {
+    // Here you can implement logic to generate bot responses based on user input
+    // Replace this with actual logic or API call
+    
+    // Example responses based on user input
+    return new Promise(function(resolve, reject) {
+        // Convert user message to lowercase for easier comparison
+        var userMessageLower = userMessage.toLowerCase();
+        
+        // Check for specific keywords or phrases in user input
+        if (userMessageLower.includes('hello') || userMessageLower.includes('hi')) {
+            resolve("Hello there! How can I help you today?");
+        } else if (userMessageLower.includes('buy bitcoin')) {
+            resolve("Sure! Please enter the amount of Bitcoin you wish to purchase and your wallet address.");
+        } else if (userMessageLower.includes('help')) {
+            resolve("What do you need help with? Feel free to ask any questions!");
+        } else if (userMessageLower.includes('what will you do')) {
+            resolve("I will guide you on how to use this website. Please feel free to ask anything specific!");
+        } else if (userMessageLower.includes('what do')) {
+            resolve("I will guide you on how to use this website. Please feel free to ask anything specific!");
+        }else if (userMessageLower.includes('where')) {
+            resolve("You should scroll it up then you will see form. Please feel free to ask anything specific!");
+        }else if (userMessageLower.includes('really')) {
+            resolve("Yes! it will,just check it. Please feel free to ask anything specific!");
+        }else{
+            // Default response for unrecognized inputs
+            resolve("I'm sorry, I can only assist with questions related to this website. Please try asking a different question or contact our support team for further assistance.");
+        }
+    });
+}
+
+function appendBotMessage(message) {
+    var chatBotMessages = document.getElementById('chatBotMessages');
+    var botMessageElement = document.createElement('div');
+    botMessageElement.className = 'chat-message bot-message';
+    botMessageElement.innerHTML = '<p>' + message + '</p>';
+    chatBotMessages.appendChild(botMessageElement);
+    
+    // Scroll to bottom of chat after appending message
+    chatBotMessages.scrollTop = chatBotMessages.scrollHeight;
+}
+</script>

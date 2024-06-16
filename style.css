@@ -1,0 +1,13 @@
+.container-fluid {
+    height: 100vh; /* 100% of viewport height */
+    width: 100vw; /* 100% of viewport width */
+    background: #121212; /* Corrected property name */
+    color: #FFFFFF;
+    border: 1px solid #333333; /* Added border style */
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid white; /* Added border style and corrected property name */
+}
